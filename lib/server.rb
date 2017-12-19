@@ -34,6 +34,6 @@ loop do
   socket.puts output
   socket.close
 
-puts ["Wrote this response:", headers, output].join("\n")
-puts "\nResponse complete, exiting."
+  puts ["Wrote this response:", headers, output].join("\n")
+  puts "\nResponse complete, exiting."
 end
