@@ -5,9 +5,10 @@ require "./lib/response_selector"
 
 class Server
   include ResponseSelector
+  attr_reader :output
 
   def initialize
-    @output  = ""
+    @output = ""
   end
 
   def run
@@ -34,9 +35,8 @@ class Server
     when '/datetime' then datetime
     when '/shutdown' then shutdown
     when '/word_search' then word_search(@request.parameter)
+    else notfound
     end
     return response
   end
 end
-s = Server.new
-s.run
